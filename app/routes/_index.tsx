@@ -3,13 +3,14 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from "@remix-run/cloudflare";
+import { useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Travellix" },
     {
       name: "description",
-      content: "Welcome to Remix! Using Vite and Cloudflare!",
+      content: "Manage your trips and expenses with Travellix.",
     },
   ];
 };
@@ -21,9 +22,12 @@ export async function loader({ context }: LoaderFunctionArgs) {
 }
 
 export default function Index() {
+  const { MY_ENV } = useLoaderData<typeof loader>();
+
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix (with Vite and Cloudflare)</h1>
+      <h3>My env is: {MY_ENV}</h3>
       <ul>
         <li>
           <a

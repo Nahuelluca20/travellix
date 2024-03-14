@@ -1,4 +1,8 @@
-import type { MetaFunction } from "@remix-run/cloudflare";
+import {
+  json,
+  type LoaderFunctionArgs,
+  type MetaFunction,
+} from "@remix-run/cloudflare";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,6 +13,12 @@ export const meta: MetaFunction = () => {
     },
   ];
 };
+
+export async function loader({ context }: LoaderFunctionArgs) {
+  const { MY_ENV } = context.cloudflare.env;
+  console.log(MY_ENV);
+  return json({ MY_ENV });
+}
 
 export default function Index() {
   return (

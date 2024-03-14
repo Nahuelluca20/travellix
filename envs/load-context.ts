@@ -3,10 +3,6 @@ import { type PlatformProxy } from "wrangler";
 import { EnvSchema } from "envs/env";
 import { z } from "zod";
 
-interface Envs {
-  MY_ENV: string;
-}
-
 interface Env {}
 
 export type AppEnvs = z.infer<typeof EnvSchema>;
@@ -17,7 +13,7 @@ declare module "@remix-run/cloudflare" {
   interface LoaderFunctionArgs {
     context: {
       cloudflare: {
-        env: Envs;
+        env: AppEnvs;
       };
     };
   }

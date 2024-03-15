@@ -25,8 +25,13 @@ export default function Index() {
   const { MY_ENV } = useLoaderData<typeof loader>();
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix (with Vite and Cloudflare)</h1>
+    <div className="bg-hunt-dark-200">
+      <h1 className="text-3xl text-red-200 font-bold underline">
+        Hello world!
+      </h1>
+      <h1 className="bg-hunt-teal-100">
+        Welcome to Remix (with Vite and Cloudflare)
+      </h1>
       <h3>My env is: {MY_ENV}</h3>
       <ul>
         <li>

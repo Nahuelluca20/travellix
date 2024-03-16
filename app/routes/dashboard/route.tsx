@@ -16,7 +16,7 @@ export default function Dashboard() {
     <div className="min-h-screen flex flex-col">
       {/* <Navbar /> */}
       <div className="bg-dark-400 flex-grow flex h-full">
-        <div className="mx-auto justify-between max-w-[1280px] min-h-full flex-grow flex my-10">
+        <div className="mx-auto justify-between px-5 max-w-[1280px] min-h-full flex-grow flex my-10">
           {/* <ProfileAside /> */}
           <Outlet />
           {/* <SearchTravelAside /> */}

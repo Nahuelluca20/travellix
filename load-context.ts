@@ -14,6 +14,8 @@ declare module "@remix-run/cloudflare" {
 
 declare module "@remix-run/cloudflare" {
   interface LoaderFunctionArgs {
+    request: Request;
+    params: Params;
     context: {
       cloudflare: {
         env: AppEnvs;
